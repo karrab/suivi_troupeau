@@ -1,0 +1,14 @@
+<?php
+// Copiez ce fichier en config.local.php et adaptez-le (non versionné).
+return [
+    'app' => [
+        'base_url' => '',          // ex. '/suivi_troupeau/public' si installé dans un sous-dossier
+        'debug'    => false,
+    ],
+    'db' => [
+        'host' => '127.0.0.1',
+        'name' => 'suivi_troupeau',
+        'user' => 'troupeau',
+        'pass' => 'CHANGEZ-MOI',
+    ],
+];

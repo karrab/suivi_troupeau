@@ -1,0 +1,4 @@
+# Si le projet entier est placé dans la racine web, on redirige vers public/
+RewriteEngine On
+RewriteRule ^$ public/ [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]

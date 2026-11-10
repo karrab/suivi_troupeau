@@ -1,0 +1,6 @@
+config/config.local.php
+storage/logs/*.log
+/vendor/
+.DS_Store
+.idea/
+.vscode/
