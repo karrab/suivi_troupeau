@@ -1,4 +1,23 @@
-# Si le projet entier est placé dans la racine web, on redirige vers public/
-RewriteEngine On
-RewriteRule ^$ public/ [L]
-RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+# Apache : options de sécurité et de performance pour Suivi Troupeau
+Options -Indexes
+DirectoryIndex index.php
+
+# Fichiers cachés et sensibles inaccessibles
+<FilesMatch "^\.|\.(sql|ini|cnf|md|log|exemple)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+# Cache navigateur longue durée pour les ressources versionnées (?v=...)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json
+</IfModule>

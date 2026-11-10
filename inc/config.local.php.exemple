@@ -1,0 +1,11 @@
+<?php
+// Copiez ce fichier en inc/config.local.php puis adaptez-le.
+return [
+    'appli' => ['debogage' => false],
+    'bd' => [
+        'hote'         => '127.0.0.1',
+        'nom'          => 'suivi_troupeau',
+        'utilisateur'  => 'troupeau',
+        'mot_de_passe' => 'CHANGEZ-MOI',
+    ],
+];
